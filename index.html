@@ -521,6 +521,11 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_render_and_view_your_guide_locally">Render and view your guide locally</a></li>
 <li><a href="#_get_familiar_with_your_guide_s_structure_and_contents">Get familiar with your guide&#8217;s structure and contents</a></li>
 <li><a href="#_write_your_guide">Write your guide</a></li>
+<li><a href="#_host_your_guide_repository_on_github">Host your guide repository on GitHub</a></li>
+<li><a href="#_publish_your_guide_to_github_pages">Publish your guide to GitHub Pages</a></li>
+<li><a href="#_request_your_guide_be_listed_at_gradle_org">Request your guide be listed at gradle.org</a></li>
+<li><a href="#_summary">Summary</a></li>
+<li><a href="#_help_improve_this_guide">Help improve this guide</a></li>
 </ul>
 </div>
 </div>
@@ -744,6 +749,8 @@ Tighten the development loop with Gradle&#8217;s <em>continuous mode</em>
 <div class="paragraph">
 <p>Making a change to a file and re-running <code>./gradlew build</code> to see the results is repetitive and time consuming. Instead, run Gradle in <em>continuous mode</em> to watch for changes to source files and re-generate guide HTML automatically with <code>./gradlew --continuous build</code>.</p>
 </div>
+</div>
+</div>
 <div class="paragraph">
 <p>You now have everything you need to write your guide. To get a feel for conventions and best practices, we recommend you read and work through a few of the existing Getting Started Guides at <a href="http://grdev.org/guides">gradle.org/guides</a> if you haven&#8217;t done so already.</p>
 </div>
@@ -759,24 +766,32 @@ New to Asciidoc?
 </tr>
 </table>
 </div>
-</div>
-</div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
 <p>Refer to the <a href="http://asciidoctor.org/docs/user-manual/">Asciidoctor user manual</a> while writing and you&#8217;ll master the basics in no time.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
 <p>Before writing the remainder of your guide, you may want to skip ahead to the next sections to understand the rest of the guide publication workflow.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>== Host your guide repository on GitHub</p>
+</td>
+</tr>
+</table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_host_your_guide_repository_on_github"><a class="anchor" href="#_host_your_guide_repository_on_github"></a>Host your guide repository on GitHub</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Log into your GitHub account and <a href="https://help.github.com/articles/create-a-repo/">create a new repository</a> for your guide.</p>
 </div>
@@ -805,19 +820,29 @@ New to Asciidoc?
 git push --set-upstream origin master:master</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>== Publish your guide to GitHub Pages</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_publish_your_guide_to_github_pages"><a class="anchor" href="#_publish_your_guide_to_github_pages"></a>Publish your guide to GitHub Pages</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>At any point in the writing process, you can publish your guide to GitHub Pages to see what it looks like live on the web.</p>
 </div>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">New to GitHub Pages?</div>
 <div class="paragraph">
 <p><a href="https://pages.github.com/">GitHub Pages</a> provides GitHub users with a free and convienent way to publish static content on the web. You&#8217;ll find everything you need for publishing your guide in the steps below, but if you&#8217;d like more information about GitHub Pages, check out <a href="https://help.github.com/categories/github-pages-basics/">GitHub Pages Basics</a>.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>First, open <code>build.gradle</code> and change the value assigned to <code>repoUri</code> to reflect the URL of your new repository. For example:</p>
 </div>
@@ -841,39 +866,51 @@ git push --set-upstream origin master:master</code></pre>
 <div class="paragraph">
 <p>When complete, an HTML rendering of the latest changes to your guide should be available at <a href="http://your-github-username.github.io/gs-your-guide" class="bare">http://your-github-username.github.io/gs-your-guide</a>.</p>
 </div>
-<div class="paragraph">
-<p>== Request your guide be listed at gradle.org</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_request_your_guide_be_listed_at_gradle_org"><a class="anchor" href="#_request_your_guide_be_listed_at_gradle_org"></a>Request your guide be listed at gradle.org</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>When you&#8217;ve finished writing, reviewing and editing your guide, <a href="https://help.github.com/articles/editing-files-in-another-user-s-repository/">propose an edit</a> to the <a href="https://github.com/gradle/build-tool-web/blob/gh-pages/_data/guides.yml">_data/guides.yml</a> page in the <a href="https://github.com/gradle/build-tool-web/">gradle/build-tool-web</a> repository. Add an entry for your guide, including its name and full URL. The Gradle team will review your guide and work with you to get it listed.</p>
 </div>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Reach out to the Gradle team <strong>before</strong> writing your guide</div>
 <div class="paragraph">
 <p>If you&#8217;re not 100% sure that your guide is a good candidate for inclusion at gradle.org, reach out to the Gradle team before you spend much time writing it. Just add an issue to the <a href="https://github.com/gradle/build-tool-web/">gradle/build-tool-web</a> repository and ask the team for feedback.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>== Summary</p>
+</td>
+</tr>
+</table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>That&#8217;s it! You&#8217;ve worked through the steps necessary to create a Getting Started Guide. We hope you&#8217;ve found the process a pleasure and wish you all the best in your writing. Thanks in advance for your contribution!</p>
 </div>
-<div class="paragraph">
-<p>== Help improve this guide</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_help_improve_this_guide"><a class="anchor" href="#_help_improve_this_guide"></a>Help improve this guide</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Have feedback or a question? Found a typo? Like all Gradle guides, help is just a GitHub Issue away. Please add an issue or pull request to the <a href="https://github.com/gradle/build-tool-web/">gradle/build-tool-web</a> and we&#8217;ll get back to you.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-08-30 23:34:17 +02:00
+Last updated 2016-08-30 23:53:12 +02:00
 </div>
 </div>
 </body>
