@@ -523,7 +523,7 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#write_your_guide">Write your guide</a></li>
 <li><a href="#host_your_guide_repository_on_github">Host your guide repository on GitHub</a></li>
 <li><a href="#publish_your_guide_to_github_pages">Publish your guide to GitHub Pages</a></li>
-<li><a href="#request_your_guide_be_listed_at_gradle_org">Request your guide be listed at gradle.org</a></li>
+<li><a href="#request_that_your_guide_be_listed_at_gradle_org">Request that your guide be listed at gradle.org</a></li>
 <li><a href="#summary">Summary</a></li>
 <li><a href="#help_improve_this_guide">Help improve this guide</a></li>
 </ul>
@@ -533,7 +533,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide walks you through the process of writing a new <em>Getting Started Guide</em> for inclusion at <a href="http://grdev.org/guides">https://gradle.org/guides</a>.</p>
+<p>This guide walks you through the process of writing a new <em>Getting Started Guide</em> for inclusion at <a href="http://guides.gradle.org/">https://guides.gradle.org/</a>.</p>
 </div>
 </div>
 </div>
@@ -541,7 +541,7 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="what_you_ll_build"><a class="anchor" href="#what_you_ll_build"></a>What you&#8217;ll build</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starting from a template project, you&#8217;ll create a new Git repository for your Getting Started Guide complete with everything you need. After writing the content of the guide in Asciidoc, you&#8217;ll publish your guide to the web via GitHub Pages and then issue a Pull Request to include your guide at <a href="http://grdev.org/guides">https://gradle.org/guides</a>.</p>
+<p>Starting from a template project, you&#8217;ll create a new Git repository for your Getting Started Guide complete with everything you need. After writing the content of the guide in Asciidoc, you&#8217;ll publish your guide to the web via GitHub Pages and then issue a Pull Request to include your guide at <a href="http://guides.gradle.org/guides">https://guides.gradle.org/</a>.</p>
 </div>
 </div>
 </div>
@@ -580,19 +580,19 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">git clone https://github.com/gradle-guides/gs-writing-gs-guides.git gs-your-guide <i class="conum" data-value="1"></i><b>(1)</b>
-cd gs-your-guide
-rm -rf .git <i class="conum" data-value="2"></i><b>(2)</b>
-git init    <i class="conum" data-value="3"></i><b>(3)</b>
-git add .   <i class="conum" data-value="4"></i><b>(4)</b>
-git commit -m&quot;Initialize repository from template&quot; <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+<pre>$ git clone https://github.com/gradle-guides/gs-writing-gs-guides.git gs-your-guide <i class="conum" data-value="1"></i><b>(1)</b>
+$ cd gs-your-guide
+$ rm -rf .git                                                                <i class="conum" data-value="2"></i><b>(2)</b>
+$ git init                                                                   <i class="conum" data-value="3"></i><b>(3)</b>
+$ git add .                                                                  <i class="conum" data-value="4"></i><b>(4)</b>
+$ git commit -m "Initialize repository from template"                        <i class="conum" data-value="5"></i><b>(5)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Clone the template repository locally, renaming it to <code>gs-your-guide</code> in the process. Replace <code>&lt;your-guide&gt;</code> with the actual name of your guide. For example, <code>gs-writing-plugins</code> would be a suitable repository name for a guide titled "Getting Started Writing Gradle Plugins", and <code>gs-fat-jars</code> would work for a guide titled "Getting Started Working with Fat JARs".</td>
+<td>Clone the template repository locally, renaming it to <code>gs-your-guide</code> in the process. Replace the <code>&lt;your-guide&gt;</code> part with the actual name of your guide. For example, <code>gs-writing-plugins</code> would be a suitable repository name for a guide titled "Getting Started Writing Gradle Plugins", and <code>gs-fat-jars</code> would work for a guide titled "Getting Started Working with Fat JARs".</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -618,12 +618,12 @@ git commit -m&quot;Initialize repository from template&quot; <i class="conum" da
 <h2 id="render_and_view_your_guide_locally"><a class="anchor" href="#render_and_view_your_guide_locally"></a>Render and view your guide locally</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You now have everything you need to render the guide from Asciidoc into HTML and view the result. Follow the instructions below to run your Gradle build and open the resulting HTML file.</p>
+<p>You now have everything you need to render the guide from Asciidoc into HTML and view the result. Run the following commands to process the guide source and open the resulting HTML file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">./gradlew build <i class="conum" data-value="1"></i><b>(1)</b>
-open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre>$ ./gradlew build                                                            <i class="conum" data-value="1"></i><b>(1)</b>
+$ open build/html5/index.html                                                <i class="conum" data-value="2"></i><b>(2)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -639,7 +639,7 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 </table>
 </div>
 <div class="paragraph">
-<p>The guide you see after step (2) above should be identical to the one you&#8217;re reading right now.</p>
+<p>At this point, you should have opened an HTML page that looks identical to the one you&#8217;re reading right now. But before you start replacing that with your own content, take a look at the project&#8217;s structure.</p>
 </div>
 </div>
 </div>
@@ -652,7 +652,7 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Asciidoc sources and</p>
+<p>An Asciidoc source file and</p>
 </li>
 <li>
 <p>a Gradle build to process them into HTML (and later to publish them to GitHub Pages)</p>
@@ -660,18 +660,17 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 </ol>
 </div>
 <div class="paragraph">
-<p>The file you&#8217;ll interact with most as a guide author is <code>README.adoc</code>. The listing below walks through each of the top-level directory entries to familiarize you familiar with what&#8217;s there.</p>
+<p>The file you&#8217;ll interact with most as a guide author is <code>README.adoc</code>, but it&#8217;s useful to know what the other files and directories are for as well. The following listing walks through each of the top-level directory entries:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">$ tree -L 1
-.
-├── README.adoc  <i class="conum" data-value="1"></i><b>(1)</b>
-├── build        <i class="conum" data-value="2"></i><b>(2)</b>
-├── build.gradle <i class="conum" data-value="3"></i><b>(3)</b>
-├── gradle       <i class="conum" data-value="4"></i><b>(4)</b>
-├── gradlew      <i class="conum" data-value="5"></i><b>(5)</b>
-└── gradlew.bat  <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
+<pre>.
+├── README.adoc                                                              <i class="conum" data-value="1"></i><b>(1)</b>
+├── build                                                                    <i class="conum" data-value="2"></i><b>(2)</b>
+├── build.gradle                                                             <i class="conum" data-value="3"></i><b>(3)</b>
+├── gradle                                                                   <i class="conum" data-value="4"></i><b>(4)</b>
+├── gradlew                                                                  <i class="conum" data-value="5"></i><b>(5)</b>
+└── gradlew.bat                                                              <i class="conum" data-value="6"></i><b>(6)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -682,7 +681,7 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Output directory for the build, where generated guide HTML can be found</td>
+<td>Output directory for the build, where generated HTML for the guide can be found</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -698,9 +697,12 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Gradle Wrapper Windows shell script</td>
+<td>Gradle Wrapper Windows batch file</td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Now you&#8217;re ready to work on your new guide&#8217;s content.</p>
 </div>
 </div>
 </div>
@@ -708,10 +710,10 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 <h2 id="write_your_guide"><a class="anchor" href="#write_your_guide"></a>Write your guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this step, you&#8217;ll use your favorite editor to re-write <code>README.adoc</code> to take the shape of the guide you&#8217;d like to contribute.</p>
+<p>In this step, you&#8217;ll use your favorite editor to re-write <code>README.adoc</code> to create your new guide.</p>
 </div>
 <div class="paragraph">
-<p>First, change the title found on the first line of <code>README.adoc</code> to something appropriate for your guide. For example, from:</p>
+<p>First, change the title found on the first line of <code>README.adoc</code> to something appropriate for your guide. For example, from</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -719,7 +721,7 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 </div>
 </div>
 <div class="paragraph">
-<p>to:</p>
+<p>to</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -727,32 +729,18 @@ open build/html5/index.html <i class="conum" data-value="2"></i><b>(2)</b></code
 </div>
 </div>
 <div class="paragraph">
-<p>Then, regenerate your guide&#8217;s HTML using <code>./gradlew build</code> as you did in the step above.</p>
+<p>Then, regenerate your guide&#8217;s HTML:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ./gradlew build</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>When complete, open or refresh <code>build/html5/index.html</code> in your browser and notice that the title of the document has changed as expected.</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Tighten the development loop with Gradle&#8217;s <em>continuous mode</em>
-</td>
-</tr>
-</table>
-</div>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p>Making a change to a file and re-running <code>./gradlew build</code> to see the results is repetitive and time consuming. Instead, run Gradle in <em>continuous mode</em> to watch for changes to source files and re-generate guide HTML automatically with <code>./gradlew --continuous build</code>.</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>You now have everything you need to write your guide. To get a feel for conventions and best practices, we recommend you read and work through a few of the existing Getting Started Guides at <a href="http://grdev.org/guides">gradle.org/guides</a> if you haven&#8217;t done so already.</p>
+<p>As you work on the main content of the guide, we recommend that you read the <a href="https://github.com/gradle-guides/style-guide/blob/master/README.adoc">style guide</a> and work through a few of the existing <a href="http://guides.gradle.org/">Getting Started Guides</a> if you haven&#8217;t done so already.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -761,17 +749,13 @@ Tighten the development loop with Gradle&#8217;s <em>continuous mode</em>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-New to Asciidoc?
+<div class="title">New to Asciidoc?</div>
+<div class="paragraph">
+<p>Refer to the <a href="http://asciidoctor.org/docs/user-manual/">Asciidoctor user manual</a> while writing and you&#8217;ll master the basics in no time. There is also a <a href="http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">quick reference for syntax</a> that&#8217;s particularly useful when you just want to know the syntax for something specific.</p>
+</div>
 </td>
 </tr>
 </table>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Refer to the <a href="http://asciidoctor.org/docs/user-manual/">Asciidoctor user manual</a> while writing and you&#8217;ll master the basics in no time.</p>
-</div>
-</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -793,7 +777,7 @@ New to Asciidoc?
 <h2 id="host_your_guide_repository_on_github"><a class="anchor" href="#host_your_guide_repository_on_github"></a>Host your guide repository on GitHub</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Log into your GitHub account and <a href="https://help.github.com/articles/create-a-repo/">create a new repository</a> for your guide.</p>
+<p>Log into your GitHub account and <a href="https://help.github.com/articles/create-a-repo/">create a new repository</a> for your guide, taking the following into account:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -812,13 +796,25 @@ New to Asciidoc?
 <p>When complete, you should have a new, empty repository at <a href="https://github.com/your-github-username/gs-your-guide" class="bare">https://github.com/your-github-username/gs-your-guide</a>.</p>
 </div>
 <div class="paragraph">
-<p>You can now push the contents of your local Git repository to your new GitHub remote:</p>
+<p>You can now push the contents of your local Git repository to your new GitHub remote with these commands:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">git remote add origin https://github.com/your-github-username/gs-your-guide
-git push --set-upstream origin master:master</code></pre>
+<pre>$ git remote add origin https://github.com/your-github-username/gs-your-guide
+$ git push --set-upstream origin master:master</pre>
 </div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Feel free to use either the HTTPS or the SSH URL for your GitHub repository. We&#8217;re only using the HTTPS URL for demonstration purposes.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -860,7 +856,7 @@ git push --set-upstream origin master:master</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">./gradlew build publishGhPages</code></pre>
+<pre>$ ./gradlew build publishGhPages</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -869,7 +865,7 @@ git push --set-upstream origin master:master</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="request_your_guide_be_listed_at_gradle_org"><a class="anchor" href="#request_your_guide_be_listed_at_gradle_org"></a>Request your guide be listed at gradle.org</h2>
+<h2 id="request_that_your_guide_be_listed_at_gradle_org"><a class="anchor" href="#request_that_your_guide_be_listed_at_gradle_org"></a>Request that your guide be listed at gradle.org</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you&#8217;ve finished writing, reviewing and editing your guide, <a href="https://help.github.com/articles/editing-files-in-another-user-s-repository/">propose an edit</a> to the <a href="https://github.com/gradle/build-tool-web/blob/gh-pages/_data/guides.yml">_data/guides.yml</a> page in the <a href="https://github.com/gradle/build-tool-web/">gradle/build-tool-web</a> repository. Add an entry for your guide, including its name and full URL. The Gradle team will review your guide and work with you to get it listed.</p>
@@ -883,7 +879,7 @@ git push --set-upstream origin master:master</code></pre>
 <td class="content">
 <div class="title">Reach out to the Gradle team <strong>before</strong> writing your guide</div>
 <div class="paragraph">
-<p>If you&#8217;re not 100% sure that your guide is a good candidate for inclusion at gradle.org, reach out to the Gradle team before you spend much time writing it. Just add an issue to the <a href="https://github.com/gradle/build-tool-web/">gradle/build-tool-web</a> repository and ask the team for feedback.</p>
+<p>If you&#8217;re not 100% sure that your guide is a good candidate for inclusion at gradle.org, reach out to the Gradle team before you spend much time writing it. Just add an issue to the <a href="https://github.com/gradle/guides">gradle/guides</a> repository and ask the team for feedback.</p>
 </div>
 </td>
 </tr>
@@ -910,7 +906,7 @@ git push --set-upstream origin master:master</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-09-08 14:26:11 UTC
+Last updated 2016-09-21 08:21:16 UTC
 </div>
 </div>
 </body>
