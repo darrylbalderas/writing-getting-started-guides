@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>Writing a Getting Started Guide</title>
+<title>How to Write Gradle Guides</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -511,11 +511,10 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Writing a Getting Started Guide <span class="image"><a class="image" href="https://travis-ci.org/gradle-guides/gs-writing-gs-guides"><img src="https://travis-ci.org/gradle-guides/gs-writing-gs-guides.svg?branch=master" alt="Build Status"></a></span></h1>
+<h1>How to Write Gradle Guides <span class="image"><a class="image" href="https://travis-ci.org/gradle-guides/gs-writing-gs-guides"><img src="https://travis-ci.org/gradle-guides/gs-writing-gs-guides.svg?branch=master" alt="Build Status"></a></span></h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#what_you_ll_build">What you&#8217;ll build</a></li>
 <li><a href="#what_you_ll_need">What you&#8217;ll need</a></li>
 <li><a href="#create_a_github_issue">Create a GitHub issue</a></li>
 <li><a href="#fork_and_clone_the_repository">Fork and clone the repository</a></li>
@@ -532,15 +531,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide walks you through the process of writing a new <em>Getting Started Guide</em> for inclusion at <a href="https://guides.gradle.org/">guides.gradle.org</a>. These guides are short, step-by-step tutorials that focus on a single, minimal task. The idea is to take readers from nothing to a working example, while pointing out further reading if they want to learn more.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="what_you_ll_build"><a class="anchor" href="#what_you_ll_build"></a>What you&#8217;ll build</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Once you and the Gradle Guides team have agreed on a new guide, you will work on a fork of a skeleton Getting Started Guide repository, develop the guide using Asciidoc, and finally submit a Pull Request once your guide is ready for review.</p>
+<p>This guide walks you through the process of writing a new <em>Gradle Guide</em> for inclusion at <a href="http://guides.gradle.org/">https://guides.gradle.org/</a>. These guides can take different forms—such as short, step-by-step tutorials or longer, more discussion-oriented pieces—but the process for writing and contributing them is the same.</p>
 </div>
 </div>
 </div>
@@ -572,7 +563,7 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="create_a_github_issue"><a class="anchor" href="#create_a_github_issue"></a>Create a GitHub issue</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The first step in creating a new Getting Started Guide that is listed on the Gradle Guides site involves submitting a proposal for the new guide to the <a href="https://github.com/gradle/guides">gradle/guides</a> GitHub repository. This is so that we, the Gradle Guides team, can work with you to determine the most appropriate subject and scope for the guide.</p>
+<p>The first step in creating a new Gradle Guide is to submit a proposal to the <a href="https://github.com/gradle/guides">gradle/guides</a> GitHub repository. This is so that we, the Gradle Guides team, can work with you to determine the most appropriate subject, form and scope for the guide.</p>
 </div>
 <div class="paragraph">
 <p>To submit your proposal:</p>
@@ -591,7 +582,23 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </div>
 <div class="paragraph">
-<p>Once the proposal has been accepted, the Gradle Guides team will <a href="https://github.com/gradle/guides/blob/master/README.md">create a new GitHub repository</a> for your guide. You won&#8217;t be able to commit directly to that repository, but that&#8217;s not a problem as you will be using the standard fork and pull request work flow.</p>
+<p>You don&#8217;t have to specify which form the guide should take in the initial proposal, but if you do, please express your preference as one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Short, step-by-step tutorial (Getting Started Guide)</p>
+</li>
+<li>
+<p>Long-form tutorial</p>
+</li>
+<li>
+<p>Discussion about a single topic (topical guide)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once the proposal has been accepted, the Gradle Guides team will <a href="https://github.com/gradle/guides/blob/master/README.md">create a new GitHub repository</a> for your guide. You won&#8217;t be able to commit directly to that repository, but that&#8217;s not a problem as you will be using the standard fork and pull request workflow.</p>
 </div>
 </div>
 </div>
@@ -599,7 +606,7 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="fork_and_clone_the_repository"><a class="anchor" href="#fork_and_clone_the_repository"></a>Fork and clone the repository</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Gradle Guides team will add a link to your guide&#8217;s repository in the issue you created in the previous step. As soon as you see that link, you can:</p>
+<p>When your guide&#8217;s repository is ready, you&#8217;ll find a link to it in the issue created by you in the previous step. You should then:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -620,12 +627,12 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="render_and_view_your_guide_locally"><a class="anchor" href="#render_and_view_your_guide_locally"></a>Render and view your guide locally</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You already have everything you need to render the guide from Asciidoc into HTML and view the result. Run the following commands in the guide project directory to process the guide source and open the resulting HTML file:</p>
+<p>The project provides everything you need to generate the HTML version of your guide and view the result. Just run the following commands in the guide&#8217;s root directory:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ ./gradlew build                                                            <i class="conum" data-value="1"></i><b>(1)</b>
-$ open build/html5/index.html                                                <i class="conum" data-value="2"></i><b>(2)</b></pre>
+<pre>$ ./gradlew build                    <i class="conum" data-value="1"></i><b>(1)</b>
+$ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -649,7 +656,7 @@ $ open build/html5/index.html                                                <i 
 <h2 id="get_familiar_with_your_guide_s_structure_and_contents"><a class="anchor" href="#get_familiar_with_your_guide_s_structure_and_contents"></a>Get familiar with your guide&#8217;s structure and contents</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The structure of a Getting Started Guide repository is very simple, consisting of just two basic components:</p>
+<p>The structure of a Gradle Guide repository is very simple, consisting of just two basic components:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -657,7 +664,7 @@ $ open build/html5/index.html                                                <i 
 <p>An Asciidoc source file</p>
 </li>
 <li>
-<p>A Gradle build to process them into HTML (and later to publish them to GitHub Pages)</p>
+<p>A Gradle build to process it into HTML (and later, publish it to GitHub Pages)</p>
 </li>
 </ol>
 </div>
@@ -667,12 +674,12 @@ $ open build/html5/index.html                                                <i 
 <div class="listingblock">
 <div class="content">
 <pre>.
-├── README.adoc                                                              <i class="conum" data-value="1"></i><b>(1)</b>
-├── build                                                                    <i class="conum" data-value="2"></i><b>(2)</b>
-├── build.gradle                                                             <i class="conum" data-value="3"></i><b>(3)</b>
-├── gradle                                                                   <i class="conum" data-value="4"></i><b>(4)</b>
-├── gradlew                                                                  <i class="conum" data-value="5"></i><b>(5)</b>
-└── gradlew.bat                                                              <i class="conum" data-value="6"></i><b>(6)</b></pre>
+├── README.adoc                      <i class="conum" data-value="1"></i><b>(1)</b>
+├── build                            <i class="conum" data-value="2"></i><b>(2)</b>
+├── build.gradle                     <i class="conum" data-value="3"></i><b>(3)</b>
+├── gradle                           <i class="conum" data-value="4"></i><b>(4)</b>
+├── gradlew                          <i class="conum" data-value="5"></i><b>(5)</b>
+└── gradlew.bat                      <i class="conum" data-value="6"></i><b>(6)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -712,10 +719,10 @@ $ open build/html5/index.html                                                <i 
 <h2 id="write_your_guide"><a class="anchor" href="#write_your_guide"></a>Write your guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now you can use your favorite editor to flesh out your new guide in <code>README.adoc</code>!</p>
+<p>Asciidoc is a pure ASCII text format, so you can use any text editor or IDE to work on <code>README.adoc</code>. Many of them have support for Asciidoc syntax highlighting, which makes things easier. Once you&#8217;ve decided on an editor, just open the file and get writing!</p>
 </div>
 <div class="paragraph">
-<p>As you work on the main content of the guide, we recommend that you read the <a href="https://github.com/gradle-guides/style-guide/blob/master/README.adoc">style guide</a> and work through a few of the existing <a href="https://guides.gradle.org/">Getting Started Guides</a> if you haven&#8217;t done so already.</p>
+<p>As you work on the main content of the guide, we recommend that you read the associated <a href="https://github.com/gradle-guides/style-guide/blob/master/README.adoc">style guide</a> and read through a few of the existing <a href="http://guides.gradle.org/">Gradle Guides</a> if you haven&#8217;t done so already.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -726,7 +733,7 @@ $ open build/html5/index.html                                                <i 
 <td class="content">
 <div class="title">New to Asciidoc?</div>
 <div class="paragraph">
-<p>Refer to the <a href="http://asciidoctor.org/docs/user-manual/">Asciidoctor user manual</a> while writing and you&#8217;ll master the basics in no time. There is also a <a href="http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">quick reference for syntax</a> that&#8217;s particularly useful when you just want to know the syntax for something specific.</p>
+<p>Refer to the <a href="http://asciidoctor.org/docs/user-manual/">Asciidoctor User Manual</a> while writing and you&#8217;ll master the basics in no time. There is also a <a href="http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">quick reference for syntax</a> that&#8217;s particularly useful when you just want to know the syntax for something specific.</p>
 </div>
 </td>
 </tr>
@@ -749,10 +756,16 @@ $ open build/html5/index.html                                                <i 
 <h2 id="send_a_pull_request"><a class="anchor" href="#send_a_pull_request"></a>Send a pull request</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you&#8217;re happy with your guide, the final step is to submit it through a <a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork/">Pull Request</a>. Your guide well then enter a review process, during which changes may be requested. If that happens, simply make the changes locally and push them to your fork. The Pull Request will be updated automatically.</p>
+<p>Writing is usually an iterative process. You write a draft, it gets reviewed, you do a second draft, and so on. That&#8217;s why we recommend that you submit your guide for review as soon as you want feedback. To do so, initiate a <a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork/">pull request</a> when you&#8217;re ready.</p>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll be able to find your guide from the <a href="https://guides.gradle.org/">Gradle Guides site</a> soon after the pull request is accepted and merged.</p>
+<p>Your guide enters the review process at this point. Each step of a review involves either feedback (as comments) or edits (as commits) depending on the current stage of the process. That&#8217;s why it&#8217;s important for you to specify what type of review you want. Should the Gradle Guides team treat the current version of your guide as a first draft or something that&#8217;s ready to be published? Do you simply want feedback on the structure and overall tone, or do you want the team to check for and fix spelling and grammar issues? You don&#8217;t have to be too specific and the team will ask for clarification if necessary.</p>
+</div>
+<div class="paragraph">
+<p>Whenever you have a new draft ready, push the changes to your fork and add a comment to the pull request mentioning the Gradle Guides team, saying what type of review you would like. The pull request will update automatically and the review will continue until both sides are happy with the result.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll find your guide on the <a href="http://guides.gradle.org/">Gradle Guides site</a> soon after the pull request is accepted and merged. Well done and thank you for the valuable contribution!</p>
 </div>
 </div>
 </div>
@@ -760,7 +773,26 @@ $ open build/html5/index.html                                                <i 
 <h2 id="summary"><a class="anchor" href="#summary"></a>Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>That&#8217;s it! You&#8217;ve worked through the steps necessary to create a Getting Started Guide. We hope you&#8217;ve found the process a pleasure and wish you all the best in your writing. Thanks in advance for your contribution!</p>
+<p>In this guide, you learned how to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Submit a proposal for a new Gradle Guide</p>
+</li>
+<li>
+<p>Fork and clone the new guide&#8217;s repository</p>
+</li>
+<li>
+<p>Work on the guide&#8217;s content according to style guidelines</p>
+</li>
+<li>
+<p>Initiate a review of your guide</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now that you have some experience with it, we hope that you&#8217;re inspired to contribute more guides in the future!</p>
 </div>
 </div>
 </div>
@@ -768,14 +800,14 @@ $ open build/html5/index.html                                                <i 
 <h2 id="help_improve_this_guide"><a class="anchor" href="#help_improve_this_guide"></a>Help improve this guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Have feedback or a question? Found a typo? Like all Gradle guides, help is just a GitHub Issue away. Please add an issue or pull request to the <a href="https://github.com/gradle/build-tool-web/">gradle/build-tool-web</a> and we&#8217;ll get back to you.</p>
+<p>Have feedback or a question? Found a typo? Like all Gradle guides, help is just a GitHub Issue away. Please add an issue or pull request to <a href="https://github.com/gradle-guides/writing-gradle-guides/">gradle-guides/writing-gradle-guides</a> and we&#8217;ll get back to you.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-09-21 12:07:24 UTC
+Last updated 2016-11-29 18:05:24 UTC
 </div>
 </div>
 </body>
