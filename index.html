@@ -541,7 +541,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>A <a href="https://git-scm.org">Git</a> client</p>
+<p>A <a href="https://git-scm.org">Git</a> client (command line is fine, or use one of the many excellent GUI clients)</p>
 </li>
 <li>
 <p>A <a href="https://github.com">GitHub</a> account</p>
@@ -563,7 +563,7 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="create_a_github_issue"><a class="anchor" href="#create_a_github_issue"></a>Create a GitHub issue</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The first step in creating a new Gradle guide is to submit a proposal to the <a href="https://github.com/gradle/guides">gradle/guides</a> GitHub repository. This is so that we, the Gradle Guides team, can work with you to determine the most appropriate subject, form and scope for the guide.</p>
+<p>The first step in creating a new Gradle guide is to submit a proposal to the <a href="https://github.com/gradle/guides">gradle/guides</a> GitHub repository. This is so that we, the Gradle Guides team, can work with you to determine the most appropriate subject, form, and scope for the guide.</p>
 </div>
 <div class="paragraph">
 <p>To submit your proposal:</p>
@@ -571,7 +571,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>Create a new issue at <a href="https://github.com/gradle/guidesi/issues">gradle/guides</a> with a title that matches the suggested topic for the new guide. For example, "Publishing to private repositories" or "Creating fat JARs". The title should, in general, be a description of a task that a Gradle user might want to undertake.</p>
+<p><a href="https://help.github.com/articles/creating-an-issue/">Create a new issue</a> at <a href="https://github.com/gradle/guidesi/issues">gradle/guides</a> with a title that matches the suggested topic for the new guide. For example, "Publishing to private repositories" or "Creating fat JARs". The title should, in general, be a description of a task that a Gradle user might want to undertake.</p>
 </li>
 <li>
 <p>Add a basic outline for the proposed guide, i.e. section headings</p>
@@ -587,18 +587,18 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>Short, step-by-step tutorial (getting-started guide)</p>
+<p>Short, step-by-step introduction (getting-started guide)</p>
 </li>
 <li>
 <p>Long-form tutorial</p>
 </li>
 <li>
-<p>Discussion about a single topic (topical guide)</p>
+<p>In depth discussion about a single topic (topical guide)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Once the proposal has been accepted, the Gradle Guides team will <a href="https://github.com/gradle/guides/blob/master/README.md">create a new GitHub repository</a> for your guide. You won&#8217;t be able to commit directly to that repository, but that&#8217;s not a problem as you will be using the standard fork and pull request workflow.</p>
+<p>Once the proposal has been accepted, the Gradle Guides team will <a href="https://github.com/gradle/guides/blob/master/README.md">create a new GitHub repository</a> for your guide. You won&#8217;t be able to commit directly to that repository. Instead, you will use the standard fork and pull request workflow described here.</p>
 </div>
 </div>
 </div>
@@ -614,7 +614,10 @@ table.CodeRay td.code>pre{padding:0}
 <p><a href="https://help.github.com/articles/fork-a-repo/">Fork the repository</a></p>
 </li>
 <li>
-<p>Clone your fork</p>
+<p>Clone your fork onto your local machine</p>
+</li>
+<li>
+<p>Set an <code>upstream</code> remote that points to the original repo (See <a href="https://help.github.com/articles/configuring-a-remote-for-a-fork/">this help page</a> for details)</p>
 </li>
 </ul>
 </div>
@@ -647,8 +650,20 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>open</code> command is only needed on Mac OS X and other Linux flavors. On Windows, the path to the HTML file in a command prompt should automatically open it in a browser
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>At this point, you should have opened an HTML page that has a title and some section headings, but nothing else. It&#8217;s your job to fill in the gaps! But before you start working on that content, it&#8217;s worth having a basic understanding of the project structure.</p>
+<p>At this point, you should have an HTML page that has a title and some section headings, but nothing else. It&#8217;s your job to fill in the gaps! But before you start working on that content, it&#8217;s worth having a basic understanding of the project structure.</p>
 </div>
 </div>
 </div>
@@ -661,10 +676,10 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>An Asciidoc source file</p>
+<p>An Asciidoc source file called <code>README.adoc</code></p>
 </li>
 <li>
-<p>A Gradle build to process it into HTML (and later, publish it to GitHub Pages)</p>
+<p>A Gradle build script to process it into HTML (which later will publish it to the GitHub Pages site where the guides are hosted)</p>
 </li>
 </ol>
 </div>
@@ -675,9 +690,9 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 <div class="content">
 <pre>.
 ├── README.adoc                      <i class="conum" data-value="1"></i><b>(1)</b>
-├── build                            <i class="conum" data-value="2"></i><b>(2)</b>
+├── build/                           <i class="conum" data-value="2"></i><b>(2)</b>
 ├── build.gradle                     <i class="conum" data-value="3"></i><b>(3)</b>
-├── gradle                           <i class="conum" data-value="4"></i><b>(4)</b>
+├── gradle/                          <i class="conum" data-value="4"></i><b>(4)</b>
 ├── gradlew                          <i class="conum" data-value="5"></i><b>(5)</b>
 └── gradlew.bat                      <i class="conum" data-value="6"></i><b>(6)</b></pre>
 </div>
@@ -694,24 +709,36 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Project build script, where Asciidoc processing and GitHub Pages publication is configured</td>
+<td>Project build script, containing tasks for Asciidoc processing and GitHub Pages publication</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Gradle Wrapper storage directory</td>
+<td>Gradle wrapper storage directory</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Gradle Wrapper Bash shell script</td>
+<td>Gradle wrapper Unix shell script</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Gradle Wrapper Windows batch file</td>
+<td>Gradle wrapper Windows batch file</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Now you&#8217;re ready to work on your new guide&#8217;s content.</p>
+<p>Now you&#8217;re ready to work on your new guide&#8217;s content. You will edit the <code>README.adoc</code> file. The Gradle build will rename the result to <code>index.html</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Edit <code>README.adoc</code>, but preview <code>index.html</code> in the <code>build/html5</code> directory
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -748,6 +775,9 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 </div>
 </div>
 <div class="paragraph">
+<p>(Again, the "dot-slash" syntax is used on Unix. On Windows, just type <code>gradlew</code> or even <code>gradlew.bat</code>.)</p>
+</div>
+<div class="paragraph">
 <p>Then open or refresh <code>build/html5/index.html</code> in your browser. It&#8217;s as simple as that.</p>
 </div>
 </div>
@@ -773,7 +803,7 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 <h2 id="summary"><a class="anchor" href="#summary"></a>Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this guide, you learned how to:</p>
+<p>This guide documented the process to:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -807,7 +837,7 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-06 10:39:44 UTC
+Last updated 2017-01-25 16:48:09 UTC
 </div>
 </div>
 </body>
