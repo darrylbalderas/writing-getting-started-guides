@@ -103,6 +103,9 @@
      <div class="paragraph"> 
       <p>Once the proposal has been accepted, the Gradle Guides team will <a href="https://github.com/gradle/guides/blob/master/README.md">create a new GitHub repository</a> for your guide. You won’t be able to commit directly to that repository. Instead, you will use the standard fork and pull request workflow described here.</p> 
      </div> 
+     <div class="paragraph"> 
+      <p>You will also need to complete a <a href="https://gradle.org/cla">Contributor’s License Agreement</a> before your can submit your work.</p> 
+     </div> 
     </div> 
    </div> 
    <div class="sect1"> 
@@ -168,26 +171,30 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
     <h2 id="get_familiar_with_your_guide_s_structure_and_contents"><a class="anchor" href="#get_familiar_with_your_guide_s_structure_and_contents"></a>Get familiar with your guide’s structure and contents</h2> 
     <div class="sectionbody"> 
      <div class="paragraph"> 
-      <p>The structure of a Gradle guide repository is very simple, consisting of just two basic components:</p> 
+      <p>The structure of a Gradle guide repository is very simple, consisting of just two three components:</p> 
      </div> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>An Asciidoc source file called <code>README.adoc</code></p> </li> 
+       <li> <p>A directory called <code>contents</code> which contains an entry point Asciidoc source file called <code>index.adoc</code>.</p> </li> 
        <li> <p>A Gradle build script to process it into HTML (which later will publish it to the GitHub Pages site where the guides are hosted)</p> </li> 
+       <li> <p>A <code>src</code> folder where source code to support the guide is hosted. This source code would normally get build with the guide to ensure that the code snippets used inthe guide is up to date.</p> </li> 
       </ol> 
      </div> 
      <div class="paragraph"> 
-      <p>The file you’ll interact with most as a guide author is <code>README.adoc</code>, but it’s useful to know what the other files and directories are for as well. The following listing walks through each of the top-level directory entries:</p> 
+      <p>The file you’ll interact with most as a guide author is <code>index.adoc</code>, but it’s useful to know what the other files and directories are for as well. The following listing walks through each of the top-level directory entries:</p> 
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre>.
 ├── README.adoc                      <i class="conum" data-value="1"></i><b>(1)</b>
-├── build/                           <i class="conum" data-value="2"></i><b>(2)</b>
-├── build.gradle                     <i class="conum" data-value="3"></i><b>(3)</b>
-├── gradle/                          <i class="conum" data-value="4"></i><b>(4)</b>
-├── gradlew                          <i class="conum" data-value="5"></i><b>(5)</b>
-└── gradlew.bat                      <i class="conum" data-value="6"></i><b>(6)</b></pre> 
+├── contents/index.adoc              <i class="conum" data-value="2"></i><b>(2)</b>
+├── contents/images                  <i class="conum" data-value="3"></i><b>(3)</b>
+├── src/                             <i class="conum" data-value="4"></i><b>(4)</b>
+├── build/                           <i class="conum" data-value="5"></i><b>(5)</b>
+├── build.gradle                     <i class="conum" data-value="6"></i><b>(6)</b>
+├── gradle/                          <i class="conum" data-value="7"></i><b>(7)</b>
+├── gradlew                          <i class="conum" data-value="8"></i><b>(8)</b>
+└── gradlew.bat                      <i class="conum" data-value="9"></i><b>(9)</b></pre> 
       </div> 
      </div> 
      <div class="colist arabic"> 
@@ -195,40 +202,52 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
        <tbody>
         <tr> 
          <td><i class="conum" data-value="1"></i><b>1</b></td> 
-         <td>Asciidoc source for the guide</td> 
+         <td>GitHub README with some instructions.</td> 
         </tr> 
         <tr> 
          <td><i class="conum" data-value="2"></i><b>2</b></td> 
-         <td>Output directory for the build, where generated HTML for the guide can be found</td> 
+         <td>Asciidoc source for the guide.</td> 
         </tr> 
         <tr> 
          <td><i class="conum" data-value="3"></i><b>3</b></td> 
-         <td>Project build script, containing tasks for Asciidoc processing and GitHub Pages publication</td> 
+         <td>Supporting images for the guide.</td> 
         </tr> 
         <tr> 
          <td><i class="conum" data-value="4"></i><b>4</b></td> 
-         <td>Gradle Wrapper storage directory</td> 
+         <td>Supporting source code for the guide. Include these in the guide via the Asciidoc <code>include::</code> directive and <code>tag::</code> markup.</td> 
         </tr> 
         <tr> 
          <td><i class="conum" data-value="5"></i><b>5</b></td> 
-         <td>Gradle Wrapper Unix shell script</td> 
+         <td>Output directory for the build, where generated HTML for the guide can be found</td> 
         </tr> 
         <tr> 
          <td><i class="conum" data-value="6"></i><b>6</b></td> 
+         <td>Project build script, containing tasks for Asciidoc processing and GitHub Pages publication. Familiarize yourself with the Asciidoc attributes that the <code>asciidoctor</code> task will pass down during document generation.</td> 
+        </tr> 
+        <tr> 
+         <td><i class="conum" data-value="7"></i><b>7</b></td> 
+         <td>Gradle Wrapper storage directory</td> 
+        </tr> 
+        <tr> 
+         <td><i class="conum" data-value="8"></i><b>8</b></td> 
+         <td>Gradle Wrapper Unix shell script</td> 
+        </tr> 
+        <tr> 
+         <td><i class="conum" data-value="9"></i><b>9</b></td> 
          <td>Gradle Wrapper Windows batch file</td> 
         </tr> 
        </tbody>
       </table> 
      </div> 
      <div class="paragraph"> 
-      <p>Now you’re ready to work on your new guide’s content. You will edit the <code>README.adoc</code> file. The Gradle build will rename the result to <code>index.html</code>.</p> 
+      <p>Now you’re ready to work on your new guide’s content. You will edit the <code>contents/index.adoc</code> file. You are welcome to create additional Asciidoc files inthe <code>contents</code> directory and include them via the Asciidoc <code>include::</code> directive.</p> 
      </div> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody>
         <tr> 
          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-         <td class="content"> Edit <code>README.adoc</code>, but preview <code>index.html</code> in the <code>build/html5</code> directory </td> 
+         <td class="content"> Edit <code>contents/index.adoc</code>, but preview <code>index.html</code> in the <code>build/html5</code> directory. </td> 
         </tr> 
        </tbody>
       </table> 
@@ -239,7 +258,7 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
     <h2 id="write_your_guide"><a class="anchor" href="#write_your_guide"></a>Write your guide</h2> 
     <div class="sectionbody"> 
      <div class="paragraph"> 
-      <p>Asciidoc is a pure ASCII text format, so you can use any text editor or IDE to work on <code>README.adoc</code>. Many of them have support for Asciidoc syntax highlighting, which makes things easier. Once you’ve decided on an editor, just open the file and get writing!</p> 
+      <p>Asciidoc is a pure ASCII text format, so you can use any text editor or IDE to work on <code>contens/index.adoc</code>. Many of them have support for Asciidoc syntax highlighting, which makes things easier. Once you’ve decided on an editor, just open the file and get writing!</p> 
      </div> 
      <div class="paragraph"> 
       <p>As you work on the main content of the guide, we recommend that you read the associated <a href="https://github.com/gradle-guides/style-guide/blob/master/README.adoc">style guide</a> and browse through a few of the existing <a href="https://guides.gradle.org/">guides</a> if you haven’t done so already.</p> 
@@ -323,7 +342,7 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
   </div> 
   <div id="footer"> 
    <div id="footer-text">
-     Last updated 2017-02-17 11:27:56 UTC 
+     Last updated 2017-04-07 14:39:41 UTC 
    </div> 
   </div>  
  </body>
