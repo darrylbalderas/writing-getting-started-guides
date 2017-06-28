@@ -19,3 +19,81 @@
   ga("create", "UA-4207603-1", "auto");
   ga("send", "pageview");
 </script>
+
+
+<style>
+.site-footer {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid #101010;
+
+  a {
+    color: $body-color;
+  }
+}
+
+.site-footer__contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 776px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 0.875rem;
+}
+
+.site-footer__copy,
+.site-footer__links {
+  flex-grow: 0;
+  flex-basis: 264px; /* 1. */
+}
+
+/*
+ * 1. 'flex-shrink: 1' is applied to the element with the smallest computed width among
+ *    'site-footer__copy' and 'site-footer__links'.
+ */
+.site-footer__copy {
+  flex-shrink: 1; /* 1. */
+}
+
+.site-footer__logo {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  margin-left: 10px;
+
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.site-footer__links {
+  flex-shrink: 0; /* 1 */
+  text-align: right;
+  white-space: nowrap;
+
+  a:not(:last-child) {
+    padding-right: 10px;
+  }
+
+  a:not(:first-child) {
+    padding-left: 10px;
+  }
+}
+
+@media all and (max-width: 29.99em) {
+  .site-footer__rights,
+  .site-footer__links {
+    display: none;
+  }
+
+  .site-footer__logo {
+    order: 1;
+    text-align: left;
+  }
+
+  .site-footer__copy {
+    order: 2;
+    text-align: right;
+  }
+}
+</style>
