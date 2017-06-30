@@ -77,7 +77,7 @@
 <p>A text editor</p>
 </li>
 <li>
-<p>A basic familiarity with <a href="http://asciidoctor.org/docs/user-manual/">Asciidoc</a></p>
+<p>A basic familiarity with <a href="http://asciidoctor.org/docs/user-manual/">AsciiDoc</a></p>
 </li>
 </ul>
 </div>
@@ -169,7 +169,7 @@ $ open build/html5/index.html        <i class="conum" data-value="2"></i><b>(2)<
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Run Gradle (via the Gradle Wrapper) to generate HTML from your guide&#8217;s Asciidoc sources</td>
+<td>Run Gradle (via the Gradle Wrapper) to generate HTML from your guide&#8217;s AsciiDoc sources</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -203,7 +203,7 @@ The <code>open</code> command is only needed on Mac OS X and other Linux flavors
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A directory called <code>contents</code> which contains an entry point Asciidoc source file called <code>index.adoc</code>.</p>
+<p>A directory called <code>contents</code> which contains an entry point AsciiDoc source file called <code>index.adoc</code>.</p>
 </li>
 <li>
 <p>A Gradle build script to process it into HTML (which later will publish it to the GitHub Pages site where the guides are hosted)</p>
@@ -238,7 +238,7 @@ The <code>open</code> command is only needed on Mac OS X and other Linux flavors
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Asciidoc source for the guide.</td>
+<td>AsciiDoc source for the guide.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -246,7 +246,7 @@ The <code>open</code> command is only needed on Mac OS X and other Linux flavors
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Supporting source code for the guide. Include these in the guide via the Asciidoc <code>include::</code> directive and <code>tag::</code> markup.</td>
+<td>Supporting source code for the guide. Include these in the guide via the AsciiDoc <code>include::</code> directive and <code>tag::</code> markup.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
@@ -254,7 +254,7 @@ The <code>open</code> command is only needed on Mac OS X and other Linux flavors
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Project build script, containing tasks for Asciidoc processing and GitHub Pages publication. Familiarize yourself with the Asciidoc attributes that the <code>asciidoctor</code> task will pass down during document generation.</td>
+<td>Project build script, containing tasks for AsciiDoc processing and GitHub Pages publication. Familiarize yourself with the AsciiDoc attributes that the <code>asciidoctor</code> task will pass down during document generation.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
@@ -271,7 +271,7 @@ The <code>open</code> command is only needed on Mac OS X and other Linux flavors
 </table>
 </div>
 <div class="paragraph">
-<p>Now you&#8217;re ready to work on your new guide&#8217;s content. You will edit the <code>contents/index.adoc</code> file. You are welcome to create additional Asciidoc files inthe <code>contents</code> directory and include them via the Asciidoc <code>include::</code> directive.</p>
+<p>Now you&#8217;re ready to work on your new guide&#8217;s content. You will edit the <code>contents/index.adoc</code> file. You are welcome to create additional AsciiDoc files inthe <code>contents</code> directory and include them via the AsciiDoc <code>include::</code> directive.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -291,7 +291,7 @@ Edit <code>contents/index.adoc</code>, but preview <code>index.html</code> in th
 <h2 id="write_your_guide"><a class="anchor" href="#write_your_guide"></a>Write your guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Asciidoc is a pure ASCII text format, so you can use any text editor or IDE to work on <code>contens/index.adoc</code>. Many of them have support for Asciidoc syntax highlighting, which makes things easier. Once you&#8217;ve decided on an editor, just open the file and get writing!</p>
+<p>AsciiDoc is a plain text-based, UTF-8 compliant writing format, so you can use any text editor or IDE to work on <code>contents/index.adoc</code>. Many of them have support for AsciiDoc syntax highlighting, which makes things easier. Once you&#8217;ve decided on an editor, just open the file and get writing!</p>
 </div>
 <div class="paragraph">
 <p>As you work on the main content of the guide, we recommend that you read the associated <a href="https://guides.gradle.org/style-guide">style guide</a> and browse through a few of the existing <a href="https://guides.gradle.org/">guides</a> if you haven&#8217;t done so already.</p>
@@ -303,7 +303,7 @@ Edit <code>contents/index.adoc</code>, but preview <code>index.html</code> in th
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">New to Asciidoc?</div>
+<div class="title">New to AsciiDoc?</div>
 <div class="paragraph">
 <p>Refer to the <a href="http://asciidoctor.org/docs/user-manual/">Asciidoctor User Manual</a> while writing and you&#8217;ll master the basics in no time. There is also a <a href="http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">quick reference for syntax</a> that&#8217;s particularly useful when you just want to know the syntax for something specific.</p>
 </div>
@@ -382,7 +382,7 @@ Edit <code>contents/index.adoc</code>, but preview <code>index.html</code> in th
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-28 20:10:38 UTC
+Last updated 2017-06-30 07:29:49 UTC
 </div>
 </div>
 </body>
