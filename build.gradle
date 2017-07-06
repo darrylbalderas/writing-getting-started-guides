@@ -8,5 +8,29 @@ guide {
     supAuthors 'Peter Ledbrook', 'Schalk Cronjé', 'Ken Kousen'
 }
 
+asciidoctorj {
+    version = '1.5.4'
+}
+
+asciidoctor {
+
+    ext {
+        contributeMessage = """
+
+==== Help improve this guide
+
+Have feedback or a question? Found a typo? Like all Gradle guides, help is just a GitHub issue away. Please add an issue or pull request to {guides}/${guide.repoPath}/[${guide.repoPath}] and we'll get back to you.
+"""
+    }
+
+    extensions {
+        includeprocessor(filter: { it == 'contribute' }) { document, reader, target, attributes ->
+            reader.push_include(ext.contributeMessage, target, target, 1, attributes)
+        }
+    }
+}
 
 
+asciidoctor {
+    attributes 'nofooter' : '', docinfosubs: 'attributes'
+}
